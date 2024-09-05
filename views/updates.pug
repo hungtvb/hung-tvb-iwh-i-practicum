@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= `${title}`
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    a(href="/") Return to the homepage
+    h1 Create New Custom Object
+    .form-wrapper
+      form(action="/update-cobj", method="POST")
+        div
+          label(for="pet_name") Name: 
+            span.required *
+          input(type="text", id="pet_name", name="pet_name", required)
+        div
+          label(for="pet_age") Age:
+          input(type="number", id="pet_age", name="pet_age")
+        div
+          label(for="pet_bio") Bio:
+          textarea(id="pet_bio", name="pet_bio")
+        div
+          button(type="submit") Create
